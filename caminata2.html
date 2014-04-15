@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Llega Caminando: Ciudad Peatón</title>
+    <style>
+
+#completo { position: absolute;
+  height: 100%;
+  width: 100%;
+
+}
+
+
+       #map-canvas {
+        height: 100%;
+        width:100%;
+        margin: 40px;
+        padding: 10px;
+        background:white;
+      }
+      
+      #titulo {
+        width: 80%%;
+        font-family: helvetica;
+        font-size: 25px;
+        color:black;
+      } 
+
+      
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script>
+function initialize() {
+  
+  var mapOptions = {
+    zoom: 15,
+    center:  new google.maps.LatLng(19.431088,-99.150750)
+  }
+
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+  var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(19.437142,-99.145886),
+      map: map,
+      title: 'Inicio'
+  });
+  var infocontenido = '<b>Hidalgo y Reforma</b> <br><br> <audio controls preload > <source src="http://labplc.mx/wp-content/uploads/2014/04/pin01.ogg" type="audio/ogg"> <source src="http://labplc.mx/wp-content/uploads/2014/04/pin01.mp3" type="audio/mp3"> <p>Your browser does not support the audio element </p></audio>';
+
+  infowindow = new google.maps.InfoWindow({
+      content: infocontenido
+    });
+
+google.maps.event.addListener(marker, 'click', function() {
+      infowindow.open(map,marker);
+  });
+/// marker 2
+ var marker2 = new google.maps.Marker({
+      position: new google.maps.LatLng(19.435587,-99.148879),
+      map: map,
+      title: 'Reforma y Juárez'
+  });
+  var infocontenido2 = '<b>Reforma y Juárez</b> <br> <br> <audio controls> <source src="http://labplc.mx/wp-content/uploads/2014/04/pin02.ogg" type="audio/ogg"> <source src="http://labplc.mx/wp-content/uploads/2014/04/pin02.mp3" type="audio/mp3"> <p>Your browser does not support the audio element</p> </audio>';
+
+  infowindow2 = new google.maps.InfoWindow({
+      content: infocontenido2
+    });
+
+google.maps.event.addListener(marker2, 'click', function() {
+      infowindow2.open(map,marker2);
+  });
+// fin markeer2
+
+//marker3
+ var marker3 = new google.maps.Marker({
+      position: new google.maps.LatLng(19.432711,-99.150750),
+      map: map,
+      title: 'Morelos y Bucareli'
+  });
+  var infocontenido3 = '<b>Morelos y Bucareli</b> <br><br> <audio controls> <source src="http://labplc.mx/wp-content/uploads/2014/04/pin03.ogg" type="audio/ogg"> <source src="http://labplc.mx/wp-content/uploads/2014/04/pin03.mp3" type="audio/mp3"> <p>Your browser does not support the audio element</p> </audio>';
+
+  infowindow3 = new google.maps.InfoWindow({
+      content: infocontenido3
+    });
+
+google.maps.event.addListener(marker3, 'click', function() {
+      infowindow3.open(map,marker3) ;
+  });
+  //finmarker3
+
+//marker4
+ var marker4 = new google.maps.Marker({
+      position: new google.maps.LatLng(19.431088,-99.151405),
+      map: map,
+      title: 'Bucareli y Dondé'
+  });
+  var infocontenido4 = '<b>Bucareli y Dondé</b> <br><br> <audio controls> <source src="http://labplc.mx/wp-content/uploads/2014/04/pin04.ogg" type="audio/ogg"> <source src="http://labplc.mx/wp-content/uploads/2014/04/pin04.mp3" type="audio/mp3"> <p>Your browser does not support the audio element</p> </audio>';
+
+  infowindow4 = new google.maps.InfoWindow({
+      content: infocontenido4
+    });
+
+google.maps.event.addListener(marker4, 'click', function() {
+      infowindow4.open(map,marker4);
+  });
+  //finmarker4  
+
+//marker5
+   var marker5 = new google.maps.Marker({
+      position: new google.maps.LatLng(19.429539,-99.149470),
+      map: map,
+      title: 'Ciudadela'
+  });
+  var infocontenido5 = '<b>Ciudadela/Biblioteca de México</b> <br><br> <audio controls> <source src="http://labplc.mx/wp-content/uploads/2014/04/pin05.ogg" type="audio/ogg"> <source src="http://labplc.mx/wp-content/uploads/2014/04/pin05.mp3" type="audio/mp3"> <p>Your browser does not support the audio element</p> </audio>';
+
+  infowindow5 = new google.maps.InfoWindow({
+      content: infocontenido5
+    });
+
+google.maps.event.addListener(marker5, 'click', function() {
+      infowindow5.open(map,marker5);
+  });
+//finmarker5
+
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+  </head>
+  <body>
+ <div id="completo">
+    <!--<div>
+    <header id="titulo"> <img src="http://labplc.mx/wp-content/uploads/2014/04/banner_caminata_ciudad_peaton.png" height="80"> </header>
+  </div>-->
+    <div id="map-canvas"></div>
+ </div>
+  </body>
+</html>
